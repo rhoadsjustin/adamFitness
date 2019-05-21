@@ -14,18 +14,23 @@ import Login from './screens/Login';
 import WorkoutScreen from './screens/WorkoutScreen';
 import ResultScreen from './screens/Results';
 import NutritionScreen from './screens/Nutrition';
+import { ProfileScreen } from './screens/Profile';
 
 const HomeTabNavigator = createBottomTabNavigator({
   Workouts: {
     screen: WorkoutScreen,
     headerMode: 'none',
   },
-  Results: {
+  Search: {
     screen: ResultScreen,
     headerMode: 'none',
   },
   Nutrition: {
     screen: NutritionScreen,
+    headerMode: 'none',
+  },
+  Profile: {
+    screen: ProfileScreen,
     headerMode: 'none',
   }
 })

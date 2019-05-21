@@ -1,15 +1,21 @@
 import React from 'react';
 import {
-  View,
   Text,
-  Content
+  Content,
+  Header,
+  Item, Button, Input, Icon
 } from 'native-base';
 
 export const ResultScreen = () => (
     <Content contentContainerStyle={{ paddingTop: 30 }}>
-            <View>
-                <Text>Workouts</Text>
-              </View>
+                   <Header searchBar rounded>
+                    <Item>
+                        <Input placeholder="Search" />
+                    </Item>
+                    <Button transparent>
+                        <Text>Search</Text>
+                    </Button>
+                    </Header>
     </Content>
 );
 
