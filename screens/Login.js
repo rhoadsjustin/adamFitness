@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { StyleSheet } from 'react-native';
 import {
   Container,
   Content,
@@ -9,11 +10,10 @@ import {
 } from 'native-base';
 import { View } from 'react-native';
 import TextField from '../components/TextField/TextField';
-import styles from './styles';
 
-import { authenticate } from '../../redux/reducers/users';
+// import { authenticate } from '../../redux/reducers/users';
 
-const mapDispatchToProps = {authenticate};
+// const mapDispatchToProps = {authenticate};
 
 const validate = form => {
   let errorMessage = '';
@@ -59,6 +59,7 @@ class Login extends Component {
     //       Actions.feed();
     //     }
     //   });
+    this.props.navigation.navigate('Home');
   }
 
   render(){
@@ -66,11 +67,11 @@ class Login extends Component {
       <Container style={styles.container}>
         <Content>
           <Text style={styles.formMsg}>{this.state.error}</Text>
-          <Icon
+          {/* <Icon
             style={styles.icon}
             ios="ios-happy-outline"
             android="md-happy"
-          />
+          /> */}
           <View style={styles.loginBox}>
             <TextField
             name="Enter Username"
@@ -105,4 +106,31 @@ class Login extends Component {
   }
 }
 
-export default connect(null, mapDispatchToProps)(Login);
+const styles = StyleSheet.create({
+      container: {
+          marginTop: 128,
+        },
+        icon: {
+          fontSize: 96,
+          margin: 15,
+          alignSelf: 'center',
+        },
+        loginBox: {
+          margin: 10,
+        },
+        button: {
+          marginTop: 20,
+        },
+        signupBtn: {
+          alignSelf: 'center',
+        },
+        signupTxt: {
+          fontSize: 12,
+        },
+        formMsg: {
+          fontSize: 10,
+          color: 'red',
+          alignSelf: 'center',
+        }
+})
+export default Login;

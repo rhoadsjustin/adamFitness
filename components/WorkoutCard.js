@@ -17,8 +17,8 @@ const WorkoutCard = (props) => ( <Card>
             <CardItem>
               <Left>
                 <Body>
-                  <Text>NativeBase</Text>
-                  <Text note>GeekyAnts</Text>
+                  <Text>Adam</Text>
+                  <Text note>Workout 1</Text>
                 </Body>
               </Left>
             </CardItem>
